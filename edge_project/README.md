@@ -53,7 +53,15 @@ edge_project/
 
 ## Getting Started
 
-Install dependencies inside a virtual environment and run migrations:
+Install dependencies inside a virtual environment and run migrations. You can
+either execute the repository's `bootstrap.sh` helper from the repo root or run
+the commands manually as shown below.
+
+```bash
+./bootstrap.sh
+```
+
+If you prefer to perform the steps yourself:
 
 ```bash
 python3 -m venv .venv
@@ -63,8 +71,9 @@ python manage.py migrate
 ```
 
 > **Note:** Debian-based systems ship with an *externally managed* Python where the
-> global `pip` executable is disabled. Creating a virtual environment ensures the
-> dependencies install cleanly without requiring system package changes.
+> global `pip` executable is disabled. Creating a virtual environment (or using
+> the `bootstrap.sh` helper) ensures the dependencies install cleanly without
+> requiring system package changes.
 
 Then configure a `LocationSettings` record (via admin or Django shell) before invoking the management commands, e.g.:
 
