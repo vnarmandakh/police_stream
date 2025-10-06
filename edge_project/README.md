@@ -53,12 +53,18 @@ edge_project/
 
 ## Getting Started
 
-Install dependencies and run migrations:
+Install dependencies inside a virtual environment and run migrations:
 
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 python manage.py migrate
 ```
+
+> **Note:** Debian-based systems ship with an *externally managed* Python where the
+> global `pip` executable is disabled. Creating a virtual environment ensures the
+> dependencies install cleanly without requiring system package changes.
 
 Then configure a `LocationSettings` record (via admin or Django shell) before invoking the management commands, e.g.:
 
